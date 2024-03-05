@@ -1,3 +1,4 @@
+// use node.js modules
 const http = require("http");
 const url = require("url");
 const path = require("path");
@@ -58,7 +59,7 @@ const serveHtmlFile = (res, filePath) => {
 // Create the HTTP server
 const server = http.createServer(handleRequest);
 
-// Set the port to listen on
+// Set the port to listen on => change to your desired port if necessary
 const port = 3000;
 
 // Start the server
