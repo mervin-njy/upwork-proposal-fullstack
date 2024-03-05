@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html, js, jsx, ts, tsx, css}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -30,6 +30,9 @@ export default {
         main9: "#222425",
         mainDarkest: "#141516",
         modalBg: "rgba(66, 79, 82, 0.4)",
+      },
+      borderWidth: {
+        1: "1px",
       },
     },
   },
