@@ -1,8 +1,7 @@
 // impport statements for the required modules
 import "./App.css";
 import getUser from "../mocks/userData"; // import the mock server action to get the user from the database
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form"; // import the react-hook-form hook to handle the form
 
 // type declaration for the form fields
 type FormFields = {
@@ -30,7 +29,8 @@ function App() {
       // throw an error to simulate a failed server action
       if (!user) throw new Error("User does not exist");
 
-      alert("Logged in successfully!"); // alert the user if the server action is successful
+      // alert the user if the server action is successful
+      alert("Logged in successfully!");
     } catch (error) {
       // set the error message if the server action fails (root is the form field name for the form itself
       setError("root", {
@@ -117,7 +117,7 @@ function App() {
               <div></div> <div></div> {/* loading animation */}
             </div>
           ) : (
-            "Login" // display 'Login' text when form is not submitting
+            "Login" // display 'Login' text when form can be submitted
           )}
         </button>
       </div>

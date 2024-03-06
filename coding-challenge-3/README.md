@@ -10,13 +10,12 @@ This is a mock up of a Login Component built with React, TypeScript and Tailwind
 
 This project utilizes the following:
 
-| Technology      | Description                                                   |
-| --------------- | ------------------------------------------------------------- |
-| React           | A JavaScript library for building user interfaces.            |
-| TypeScript      | A superset of JavaScript that adds static typing.             |
-| Tailwind CSS    | A utility-first CSS framework for rapid styling.              |
-| React Hook Form | A library for managing forms in React with hooks.             |
-| Zod             | A TypeScript-first schema declaration and validation library. |
+| Technology      | Description                                        |
+| --------------- | -------------------------------------------------- |
+| React           | A JavaScript library for building user interfaces. |
+| TypeScript      | A superset of JavaScript that adds static typing.  |
+| Tailwind CSS    | A utility-first CSS framework for rapid styling.   |
+| React Hook Form | A library for managing forms in React with hooks.  |
 
 ## To setup
 
@@ -60,11 +59,6 @@ This project utilizes the following:
 
   configurations and directives have been added manually - visit [tailwind](https://tailwindcss.com/docs/installation) documentation to see instructions
 
-- Zod (for form validation)
-  ```bash
-  npm install zod
-  ```
-
 ## To run server
 
 1. **Start the Server:**
@@ -73,10 +67,6 @@ This project utilizes the following:
    npm run dev
    ```
 
-## Notes
-
-1. lorem ipsum.
-
 ## Credits
 
-1. Loading spinner has been modified from an open source pure CSS loading animation by [PlotDB Ltd.](https://loading.io/css/)
+Loading spinner has been modified from an open source pure CSS loading animation by [PlotDB Ltd.](https://loading.io/css/)
