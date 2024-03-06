@@ -4,16 +4,16 @@ This is a basic HTTP server that handles web requests on a specified port (3000 
 
 ## To setup
 
-1. **Clone the Repository:**
+1. **Clone the Repository** (skip this if you have already done so):
 
    ```bash
-   git clone https://github.com/mervin-njy/coding-challenge-2.git
+   git clone https://github.com/mervin-njy/upwork-proposal-fullstack.git
    ```
 
 2. **Navigate to Project Directory:**
 
    ```bash
-   cd coding-challenge-2
+   cd upwork-proposal-fullstack/coding-challenge-2
    ```
 
 ## To run server
