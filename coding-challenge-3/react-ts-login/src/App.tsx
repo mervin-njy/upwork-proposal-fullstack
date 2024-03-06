@@ -15,13 +15,13 @@ function App() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<FormFields>();
 
   // function to handle the form submission notification => only called once the form is valid
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     // simulate a server action to get the user from the database
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     // log the form data
     console.log(data);
@@ -90,9 +90,16 @@ function App() {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="rounded-lg bg-purpleMain px-4 py-2 tracking-wide text-main transition duration-500 ease-in-out hover:bg-purpleAccent hover:text-mainDarkest focus:outline-none"
+          disabled={isSubmitting} // disable button while form is submitting
+          className="w-24 rounded-lg bg-purpleMain px-4 py-2 tracking-wide text-main transition duration-500 ease-in-out hover:bg-purpleAccent hover:text-mainDarkest focus:outline-none"
         >
-          Login
+          {isSubmitting ? (
+            <div className="lds-ripple">
+              <div></div> <div></div> {/* loading animation */}
+            </div>
+          ) : (
+            "Login" // display 'Login' text when form is not submitting
+          )}
         </button>
         {/* ERROR MESSAGE: failed server action to getUser - user doesn't exist */}
       </div>

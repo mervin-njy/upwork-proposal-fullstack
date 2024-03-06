@@ -76,3 +76,7 @@ This project utilizes the following:
 ## Notes
 
 1. lorem ipsum.
+
+## Credits
+
+1. Loading spinner has been modified from an open source pure CSS loading animation by [PlotDB Ltd.](https://loading.io/css/)
