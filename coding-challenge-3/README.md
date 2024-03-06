@@ -2,11 +2,11 @@
 
 This is a mock up of a Login Component built with React, TypeScript and Tailwind CSS. The component includes fields for email and password, as well as a submit button. As we will not be using an actual database for the CRUD server actions of user accounts, we will create mock data for the "existing" user accounts, which can be viewed in the userData.js file in the /mocks directory. For easy reference, these are the users:
 
-| User ID | Email              | Password          |
-| ------- | ------------------ | ----------------- |
-| 1       | myname@example.com | myname123         |
-| 2       | secured@email.xyz  | securep@ss        |
-| 3       | Ayam@home.penyet   | iamhomeAyamPenyet |
+| User ID | Email              | Password    |
+| ------- | ------------------ | ----------- |
+| 1       | myname@example.com | myname123   |
+| 2       | secured@email.xyz  | securep@ss  |
+| 3       | ayam@home.penyet   | tasteOfHome |
 
 This project utilizes the following:
 
