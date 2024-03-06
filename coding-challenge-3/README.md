@@ -57,7 +57,7 @@ This project utilizes the following:
   npm install -D prettier prettier-plugin-tailwindcss # automatic class sorting with Prettier
   ```
 
-  configurations and directives have been added manually - visit [tailwind](https://tailwindcss.com/docs/installation) documentation to see instructions
+  Configurations and directives have been added manually - visit [tailwind](https://tailwindcss.com/docs/guides/vite) documentation to see instructions, specifically for Vite.
 
 ## To run server
 

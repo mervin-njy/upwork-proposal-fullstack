@@ -2,6 +2,7 @@
 import "./App.css";
 import getUser from "../mocks/userData"; // import the mock server action to get the user from the database
 import { SubmitHandler, useForm } from "react-hook-form"; // import the react-hook-form hook to handle the form
+import { useState } from "react";
 
 // type declaration for the form fields
 type FormFields = {
@@ -9,17 +10,21 @@ type FormFields = {
   password: string;
 };
 
-// render the form App component
 function App() {
+  // REACT HOOKS -------------------------------------------------------------------------------------------------------------------------------
   // react-hook-form hook to handle the form
   const {
     register,
     handleSubmit,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormFields>();
+  // state to show the success message after the form is submitted
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  // function to handle the form submission notification => only called once the form is valid
+  // EVENT HANDLERS ----------------------------------------------------------------------------------------------------------------------------
+  // function to handle the form submission => only called once the form is valid
   const onSubmit: SubmitHandler<FormFields> = async (data) => {
     try {
       // simulate a server action to get the user from the database
@@ -30,7 +35,8 @@ function App() {
       if (!user) throw new Error("User does not exist");
 
       // alert the user if the server action is successful
-      alert("Logged in successfully!");
+      // alert("Logged in successfully!");
+      setShowSuccess(true);
     } catch (error) {
       // set the error message if the server action fails (root is the form field name for the form itself
       setError("root", {
@@ -39,13 +45,27 @@ function App() {
     }
   };
 
-  // return the form
+  // Function for navigating after login
+  const handleNav = (event: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(event.target);
+    window.location.href = "https://mervin-njy.github.io/2048-derivative/"; // navigate to 2048 game
+  };
+
+  // Function for loggin out after login
+  const handleLogout = (event: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(event.target);
+    setShowSuccess(false); // hide the success message after logging out
+    reset(); // clear form fields
+  };
+
+  // RENDER COMPONENT --------------------------------------------------------------------------------------------------------------------------
   return (
     // form element that uses the react-hook-form hook to handle the form submission callback
     // handleSubmit function prevents the default form submission, checks that the FormFields type is valid and calls the onSubmit function
     <form
       className="w-96 rounded-2xl border-1 border-purpleAccent px-8 py-8"
       onSubmit={handleSubmit(onSubmit)}
+      noValidate
     >
       <div className="mb-2 h-16">
         {/* INPUT 1: email including validation */}
@@ -121,6 +141,33 @@ function App() {
           )}
         </button>
       </div>
+
+      {/* SUCCESS MESSAGE: show after form is submitted */}
+      {showSuccess && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3 className="mb-10 text-center text-lg">
+              You have logged in successfully. Would you like to play 2048?
+            </h3>
+
+            {/* Buttons to navigate to 2048 or log out */}
+            <div className="flex justify-between">
+              <button
+                onClick={handleNav}
+                className="w-24 rounded-lg bg-greenMain px-4 py-2 tracking-wide text-main transition duration-500 ease-in-out hover:bg-greenAccent hover:text-mainDarkest focus:outline-none"
+              >
+                YES
+              </button>
+              <button
+                onClick={handleLogout}
+                className="w-24 rounded-lg bg-yellowMain px-4 py-2 tracking-wide text-mainDarkest transition duration-500 ease-in-out hover:bg-yellowAccent focus:outline-none"
+              >
+                Log out
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </form>
   );
 }

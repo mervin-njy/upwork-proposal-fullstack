@@ -52,3 +52,30 @@
     opacity: 0;
   }
 }
+
+/* modal (background) */
+.modal {
+  display: flex;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: visible; /* Enable scroll if needed */
+  background-color: #141516;
+  opacity: 0.9;
+}
+
+/* modal Content */
+.modal-content {
+  transform: translateY(-40%);
+  margin: auto;
+  padding: 2em 3em;
+  border: 0px solid;
+  border-radius: 10px;
+  opacity: 0.9;
+
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
